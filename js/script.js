@@ -1,6 +1,7 @@
 let body = document.querySelector(`tbody`);
 let triggerInput = document.querySelector(`#last-input`);
 let fillBtn = document.querySelector(`#fill-default`);
+let clearBtn = document.querySelector(`#clear`);
 
 let WIQ = document.querySelector(`.WIQ-total`);
 let IAT = document.querySelector(`.IAT-total`);
@@ -167,16 +168,6 @@ setInterval(() => {
   TSIS.innerHTML = sum;
 }, 1000);
 
-fillBtn.addEventListener(`click`, () => {
-  for (let i = 1; i <= samples.length; i++) {
-    let AT_cell = document.querySelector(`.AT-input${i}`);
-    let ST_cell = document.querySelector(`.ST-input${i}`);
-
-    AT_cell.value = arrivalTime[i - 1];
-    ST_cell.value = serviceTime[i - 1];
-  }
-});
-
 //LAWS
 setInterval(() => {
   //AVERAGE WAITING TIME
@@ -278,3 +269,21 @@ setInterval(() => {
 
   MathJax.typeset();
 }, 1000);
+
+fillBtn.addEventListener(`click`, () => {
+  for (let i = 1; i <= samples.length; i++) {
+    let AT_cell = document.querySelector(`.AT-input${i}`);
+    let ST_cell = document.querySelector(`.ST-input${i}`);
+
+    AT_cell.value = arrivalTime[i - 1];
+    ST_cell.value = serviceTime[i - 1];
+  }
+});
+clearBtn.addEventListener(`click`, () => {
+  for (let i = 1; i <= samples.length; i++) {
+    let AT_cell = document.querySelector(`.AT-input${i}`);
+    let ST_cell = document.querySelector(`.ST-input${i}`);
+    AT_cell.value = ``;
+    ST_cell.value = ``;
+  }
+});

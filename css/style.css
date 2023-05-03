@@ -37,8 +37,8 @@ tbody td {
 button {
   width: auto;
   padding: 0 20px;
-  display: block;
-  margin: 10px auto;
+  display: inline-block;
+  margin: 10px 20px;
   height: 50px;
   color: white;
   background-color: firebrick;
@@ -63,4 +63,9 @@ div.colored {
   background-color: firebrick;
   border-top: 2px solid gold;
   border-bottom: 2px solid gold;
+}
+
+span {
+  display: flex;
+  justify-content: center;
 }
