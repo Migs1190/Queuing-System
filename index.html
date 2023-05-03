@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <title>Queuing System</title>
+  </head>
+  <body>
+    <script defer src="js/script.js"></script>
+    <table>
+      <thead>
+        <td class="visible">Student</td>
+        <td>RD for arrival</td>
+        <td>Inter arrival time</td>
+        <td class="visible">Arrival time</td>
+        <td>RD for service</td>
+        <td class="visible">Service time</td>
+        <td>Service begin</td>
+        <td>Service end</td>
+        <td>Wait in queue</td>
+        <td>Service idle time</td>
+        <td>Time spent in system</td>
+      </thead>
+      <tbody></tbody>
+      <tfoot>
+        <td class="active">Total</td>
+        <td></td>
+        <td class="IAT-total active"></td>
+        <td></td>
+        <td></td>
+        <td class="ST-total active"></td>
+        <td></td>
+        <td></td>
+        <td class="WIQ-total active"></td>
+        <td class="SIT-total active"></td>
+        <td class="TSIS-total active"></td>
+      </tfoot>
+    </table>
+    <button id="fill-default">Fill with default values</button>
+
+    <div>
+      <p>
+        $$\text{Average waiting time} = \frac{\text{Total time students wait in
+        queue}} {\text{Total number of students}} =$$
+      </p>
+      <p id="AVG-WT-numbers"></p>
+      <p>$$=$$</p>
+      <p id="AVG-WT-value"></p>
+    </div>
+    <div class="colored">
+      <p>
+        $$\text{Probability (wait)} = \frac{\text{Number of Students who wait}}
+        {\text{Total number of students}} =$$
+      </p>
+      <p id="PRB-W-numbers"></p>
+      <p>$$=$$</p>
+      <p id="PRB-W-value"></p>
+    </div>
+    <div>
+      <p>
+        $$\text{Probability of the server being idle} = \frac{\text{Total idle
+        time of server}} {\text{Total run time of simulation}} =$$
+      </p>
+      <p id="PRB-I-numbers"></p>
+      <p>$$=$$</p>
+      <p id="PRB-I-value"></p>
+    </div>
+    <div class="colored">
+      <p>
+        $$\text{Probability of the server being busy} = 1 - \text{Probability of
+        the server being idle} =$$
+      </p>
+      <p id="PRB-B-numbers"></p>
+      <p>$$=$$</p>
+      <p id="PRB-B-value"></p>
+    </div>
+    <div>
+      <p>
+        $$\text{Average service time} = \frac{\text{Total service time}}
+        {\text{Total number of students}} =$$
+      </p>
+      <p id="AVG-S-numbers"></p>
+      <p>$$=$$</p>
+      <p id="AVG-S-value"></p>
+      <p>$$min$$</p>
+    </div>
+    <div class="colored">
+      <p>
+        $$\text{Average time between arrivals} = \frac{\text{Sum of all times
+        between arrivals}}{\text{Numbers of arrivals - 1}} =$$
+      </p>
+      <p id="AVG-T-numbers"></p>
+      <p>$$=$$</p>
+      <p id="AVG-T-value"></p>
+      <p>$$min$$</p>
+    </div>
+    <div>
+      <p>
+        $$\text{Average waiting time of those who actually wait in the queue } =
+        \frac{\text{Total time students wait in queue}} {\text{Total number of
+        students who wait}} =$$
+      </p>
+      <p id="AVG-W-numbers"></p>
+      <p>$$=$$</p>
+      <p id="AVG-W-value"></p>
+      <p>$$min$$</p>
+    </div>
+    <div class="colored">
+      <p>
+        $$\text{Average time a student spends in the system} = \frac{\text{total
+        time spent in system}}{\text{Total numbers of students}} =$$
+      </p>
+      <p id="AVG-TS-numbers"></p>
+      <p>$$=$$</p>
+      <p id="AVG-TS-value"></p>
+      <p>$$min$$</p>
+    </div>
+  </body>
+</html>
