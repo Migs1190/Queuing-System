@@ -1,7 +1,5 @@
-:root {
-  box-sizing: border-box;
-}
 * {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -17,12 +15,13 @@ input {
 
 table {
   background-color: gold;
+  width: 100%;
 }
 td {
   text-align: center;
   background-color: firebrick;
   color: white;
-  width: 9%;
+  padding: 0 2px;
 }
 thead td,
 tfoot td {
