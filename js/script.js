@@ -61,18 +61,18 @@ for (let i = 1; i <= samples.length; i++) {
   RDS.innerHTML = Math.floor(Math.random() * 1001);
 }
 
+//VALUES
 setInterval(() => {
   //INTER ARRIVAL TIME
-  for (let i = 1; i <= samples.length - 1; i++) {
+  for (let i = 1; i <= samples.length; i++) {
     let IAT_cell = document.querySelector(`.IAT-value${i}`);
     let IAT_nextCell = document.querySelector(`.IAT-value${i + 1}`);
     let AT_cell = document.querySelector(`.AT-input${i}`);
     let AT_nextCell = document.querySelector(`.AT-input${i + 1}`);
 
-    if (i == 1) IAT_cell.innerHTML = 0;
-
     if (AT_cell.value != `` && AT_nextCell.value != ``)
       IAT_nextCell.innerHTML = AT_nextCell.value - AT_cell.value;
+    else IAT_cell.innerHTML = 0;
   }
 
   //OTHER VARS
@@ -119,7 +119,7 @@ setInterval(() => {
         +SE_cell.innerHTML - +SB_cell.innerHTML + +WIQ_cell.innerHTML;
     else TSIS_cell.innerHTML = +SE_cell.innerHTML - +SB_cell.innerHTML;
   }
-}, 1000);
+}, 500);
 
 //TOTALS
 setInterval(() => {
@@ -166,7 +166,7 @@ setInterval(() => {
     sum += +TSIS_cell.innerHTML;
   }
   TSIS.innerHTML = sum;
-}, 1000);
+}, 500);
 
 //LAWS
 setInterval(() => {
@@ -268,7 +268,7 @@ setInterval(() => {
   AVG_timeSpentV.innerHTML = +TSIS.innerHTML / samples.length;
 
   MathJax.typeset();
-}, 1000);
+}, 500);
 
 fillBtn.addEventListener(`click`, () => {
   for (let i = 1; i <= samples.length; i++) {
@@ -283,7 +283,9 @@ clearBtn.addEventListener(`click`, () => {
   for (let i = 1; i <= samples.length; i++) {
     let AT_cell = document.querySelector(`.AT-input${i}`);
     let ST_cell = document.querySelector(`.ST-input${i}`);
+    let IAT_cell = document.querySelector(`.IAT-value${i}`);
     AT_cell.value = ``;
     ST_cell.value = ``;
+    IAT_cell.innerHTML = ``;
   }
 });
