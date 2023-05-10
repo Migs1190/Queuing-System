@@ -64,7 +64,7 @@ for (let i = 1; i <= samples.length; i++) {
 //VALUES
 setInterval(() => {
   //INTER ARRIVAL TIME
-  for (let i = 1; i <= samples.length; i++) {
+  for (let i = 1; i <= samples.length - 1; i++) {
     let IAT_cell = document.querySelector(`.IAT-value${i}`);
     let IAT_nextCell = document.querySelector(`.IAT-value${i + 1}`);
     let AT_cell = document.querySelector(`.AT-input${i}`);
